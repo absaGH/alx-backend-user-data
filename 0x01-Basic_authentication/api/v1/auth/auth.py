@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""This class is the template used for authentication system that will be implemented
+"""This class is the template used for authentication
+   system that will be implemented
 """
 from flask import request
 from typing import List, TypeVar
