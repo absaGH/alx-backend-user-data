@@ -3,6 +3,7 @@
    system that will be implemented
 """
 from flask import request
+from os import getenv
 from typing import List, TypeVar
 
 
@@ -43,3 +44,12 @@ class Auth():
         """Returns the current user
         """
         return None
+
+    def session_cookie(self, request=None):
+        """Returns a cookie value from a request
+        """
+        if request is None:
+            return None
+
+        session_env = getenv('SESSION_NAME', None)
+        return request.cookies.get(session_env, None)
