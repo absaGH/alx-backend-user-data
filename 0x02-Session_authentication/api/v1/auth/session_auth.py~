@@ -1,0 +1,9 @@
+#!/usr/bin/env python3
+""" Module of SessionAuth
+"""
+
+
+class SessionAuth(Auth):
+    """SesssionAuth class definition
+    """
+    pass

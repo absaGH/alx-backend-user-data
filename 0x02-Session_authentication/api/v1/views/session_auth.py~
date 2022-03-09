@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+""" Module to handle all routes for Session Auth
+"""
+from api.v1.views import app_views
+from flask import abort, jsonify, request
+from models.user import User
+from os import getenv
+
