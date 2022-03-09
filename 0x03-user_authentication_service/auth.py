@@ -25,9 +25,7 @@ class Auth:
         self._db = DB()
 
     def register_user(self, email: str, password: str) -> User:
-        """ register and return a User object.
-            If a user already exist with the passed email            , raise a ValueError.
-            If not, hash the password with _hash_password            , save the user to the database.
+        """ check if user exists, register and return a User object.
         """
         try:
             self._db.find_user_by(email=email)
