@@ -23,13 +23,13 @@ def login() -> str:
     if len(user) == 0:
         return jsonify({"error": "no user found for this email"}), 404
 
-    for u in users:
+    for u in user:
         if u.is_valid_password(password):
 
             from api.v1.app import auth
 
             sessionID = auth.create_session(user_id=u.id)
-            response = jsonify(user.to_json())
+            response = jsonify(u.to_json())
             response.set_cookie(getenv('SESSION_NAME'), sessionID)
             return response
     return jsonify({"error": "wrong password"}), 401
